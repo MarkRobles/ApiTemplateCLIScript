@@ -1,0 +1,47 @@
+mkdir ApiTemplate
+cd ApiTemplate
+
+dotnet new sln -n ApiTemplate
+
+
+dotnet new classlib -n ApiTemplate.Core
+dotnet new classlib -n ApiTemplate.Infrastructure
+dotnet  new webapi -n ApiTemplate.Api
+
+dotnet sln add ApiTemplate.Core/ApiTemplate.Core.csproj
+dotnet sln add ApiTemplate.Infrastructure/ApiTemplate.Infrastructure.csproj
+dotnet sln add ApiTemplate.Api/ApiTemplate.Api.csproj
+
+dotnet add ApiTemplate.Infrastructure/ApiTemplate.Infrastructure.csproj reference ApiTemplate.Core/ApiTemplate.Core.csproj
+dotnet add ApiTemplate.Api/ApiTemplate.Api.csproj reference ApiTemplate.Core/ApiTemplate.Core.csproj
+dotnet add ApiTemplate.Api/ApiTemplate.Api.csproj reference ApiTemplate.Infrastructure/ApiTemplate.Infrastructure.csproj
+
+
+
+cd ApiTemplate.Core
+mkdir Interfaces
+mkdir Entities
+cd ..
+
+cd ApiTemplate.Infrastructure
+mkdir Data
+mkdir Repositorios
+
+dotnet add package Microsoft.EntityFrameworkCore -v 3.1.25
+dotnet add package Microsoft.EntityFrameworkCore.Design -v 3.1.25
+dotnet add package  Microsoft.EntityFrameworkCore.SqlServer -v 3.1.25
+dotnet add package  Microsoft.EntityFrameworkCore.SqlServer -v 3.1.25
+dotnet add package Microsoft.EntityFrameworkCore.Tools  -v 3.1.25
+cd.. 
+
+
+cd ApiTemplate.Api
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection -v 8.1.1
+dotnet add package Swashbuckle.AspNetCore -v 6.2.3
+dotnet add package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer -v 5.0.0
+dotnet add package Microsoft.AspNetCore.Mvc.Versioning -v 5.0.0
+dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson -v 5.0.15
+
+
+
+
