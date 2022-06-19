@@ -8,7 +8,6 @@ dotnet new classlib -n CvCreator.Core  -f net5.0
 dotnet new classlib -n CvCreator.Infrastructure  -f net5.0
 dotnet  new webapi -n CvCreator.Api  -f net5.0
 
-
 dotnet sln add CvCreator.Core/CvCreator.Core.csproj
 dotnet sln add CvCreator.Infrastructure/CvCreator.Infrastructure.csproj
 dotnet sln add CvCreator.Api/CvCreator.Api.csproj
