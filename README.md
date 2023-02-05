@@ -1,5 +1,5 @@
 # ApiTemplateCLIScript
-A windows command line script to generate a basic MultiLayer Arquitecture to build APIs/AzureFuntions with Net Core 
+A windows command line script to generate a basic MultiLayer Arquitecture to build APIs/AzureFunctions with Net Core 
 
 
 1. Edit the file replacing the current project Name and net core version with the ones you want
