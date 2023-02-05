@@ -33,7 +33,7 @@ cd CV_Serverless
 
 dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection -v 8.1.1
 dotnet add package Microsoft.Azure.Functions.Extensions -v 1.1.0
-dotnet add package MMicrosoft.Azure.WebJobs.Extensions.OpenApi -v 1.0.0
+dotnet add package Microsoft.Azure.WebJobs.Extensions.OpenApi -v 1.0.0
 dotnet add package Newtonsoft.Json -v 11.0.2
 dotnet add package  Microsoft.EntityFrameworkCore.SqlServer -v 6.0.10
 dotnet add package  Microsoft.NET.Sdk.Functions -v 4.1.1
