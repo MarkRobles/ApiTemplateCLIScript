@@ -1,42 +1,43 @@
-mkdir CvCreator
-cd CvCreator
+mkdir Eventor
+cd Eventor
 
-dotnet new sln -n CvCreator
-
-
-dotnet new classlib -n CvCreator.Core  -f net5.0
-dotnet new classlib -n CvCreator.Infrastructure  -f net5.0
-dotnet  new webapi -n CvCreator.Api  -f net5.0
+dotnet new sln -n Eventor
 
 
-dotnet sln add CvCreator.Core/CvCreator.Core.csproj
-dotnet sln add CvCreator.Infrastructure/CvCreator.Infrastructure.csproj
-dotnet sln add CvCreator.Api/CvCreator.Api.csproj
-
-dotnet add CvCreator.Infrastructure/CvCreator.Infrastructure.csproj reference CvCreator.Core/CvCreator.Core.csproj
-dotnet add CvCreator.Api/CvCreator.Api.csproj reference CvCreator.Core/CvCreator.Core.csproj
-dotnet add CvCreator.Api/CvCreator.Api.csproj reference CvCreator.Infrastructure/CvCreator.Infrastructure.csproj
+dotnet new classlib -n Eventor.Core  -f net6.0
+dotnet new classlib -n Eventor.Infrastructure  -f net6.0
+dotnet  new webapi -n Eventor.Api  -f net6.0
 
 
+dotnet sln add Eventor.Core/Eventor.Core.csproj
+dotnet sln add Eventor.Infrastructure/Eventor.Infrastructure.csproj
+dotnet sln add Eventor.Api/Eventor.Api.csproj
 
-cd CvCreator.Core
+dotnet add Eventor.Infrastructure/Eventor.Infrastructure.csproj reference Eventor.Core/Eventor.Core.csproj
+dotnet add Eventor.Api/Eventor.Api.csproj reference Eventor.Core/Eventor.Core.csproj
+dotnet add Eventor.Api/Eventor.Api.csproj reference Eventor.Infrastructure/Eventor.Infrastructure.csproj
+
+
+
+cd Eventor.Core
 mkdir Interfaces
 mkdir Entities
 cd ..
 
-cd CvCreator.Infrastructure
+cd Eventor.Infrastructure
 mkdir Data
 mkdir Repositorios
 
-dotnet add package Microsoft.EntityFrameworkCore -v 5.0.17
-dotnet add package Microsoft.EntityFrameworkCore.Design -v 5.0.17
-dotnet add package  Microsoft.EntityFrameworkCore.SqlServer -v 5.0.17
-dotnet add package  Microsoft.EntityFrameworkCore.SqlServer -v 5.0.17
-dotnet add package Microsoft.EntityFrameworkCore.Tools  -v 5.0.17
+dotnet add package Microsoft.EntityFrameworkCore -v 6.0.16
+dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.16
+dotnet add package  Microsoft.EntityFrameworkCore.SqlServer -v 6.0.16
+dotnet add package  Microsoft.EntityFrameworkCore.SqlServer -v 6.0.16
+dotnet add package Microsoft.EntityFrameworkCore.Tools  -v 6.0.16
 cd.. 
 
 
-cd CvCreator.Api
+cd Eventor.Api
+dotnet add package Microsoft.EntityFrameworkCore.Design  -v 6.0.16
 dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection -v 8.1.1
 dotnet add package Swashbuckle.AspNetCore -v 6.2.3
 dotnet add package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer -v 5.0.0
